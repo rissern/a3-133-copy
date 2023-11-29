@@ -25,28 +25,20 @@ export class ArtistPageComponent implements OnInit {
   {
   	this.artistId = this.route.snapshot.paramMap.get('id');
     //TODO: Inject the spotifyService and use it to get the artist data, related artists, top tracks for the artist, and the artist's albums
-
-    //artist data
+    this.spotify.getAlbumsForArtist(this.artistId).then((data)=>{
+      this.albums = data;
+    });
     this.spotify.getArtist(this.artistId).then((data)=>{
       this.artist = data;
       this.artistImage = this.artist.imageURL;
       this.genres = this.artist.genres;
     });
-
-    //related artist
     this.spotify.getRelatedArtists(this.artistId).then((data)=>{
       this.relatedArtists = data;
     });
-
-    //top tracks for the artist
     this.spotify.getTopTracksForArtist(this.artistId).then((data)=>{
       this.topTracks = data;
-    });
-
-    //artist albums
-    this.spotify.getAlbumsForArtist(this.artistId).then((data)=>{
-      this.albums = data;
-    });
+    }); 
   }
 
 }

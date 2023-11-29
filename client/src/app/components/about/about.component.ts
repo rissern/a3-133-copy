@@ -10,7 +10,7 @@ import { SpotifyService } from '../../services/spotify.service';
 export class AboutComponent implements OnInit
 {
   name:string = null;
-  profile_pic:string = "../../../assets/unknown.jpg";
+  profile_pic:string = "../../../assets/sleepcycle2bigger.gif";
   profile_link:string = null;
 
   //TODO: inject the Spotify service
@@ -24,9 +24,9 @@ export class AboutComponent implements OnInit
   {
     this.spotify.aboutMe().then((data)=>
     {
-      this.name = data.name;
-      this.profile_pic = data.imageURL;
       this.profile_link = data.spotifyProfile;
+      this.profile_pic = data.imageURL;
+      this.name = data.name;
     });}
 
 }

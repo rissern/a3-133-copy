@@ -13,7 +13,7 @@ export abstract class ResourceData {
 		} else if(objectModel['album'] && objectModel['album']['images'] && objectModel['album']['images'].length > 0) {
 			this.imageURL = objectModel['album']['images'][0].url;
 		} else {
-			this.imageURL = '../../assets/unknown.jpg';
+			this.imageURL = '../../assets/sleepcycle2bigger.gif';
 		}
 
 		if('spotify' in objectModel['external_urls']) {

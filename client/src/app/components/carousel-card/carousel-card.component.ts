@@ -20,10 +20,10 @@ export class CarouselCardComponent implements OnInit
   ngOnInit()
   {
     this.url = 'http://localhost:4200/'+ this.resource.category + '/' + this.resource.id
-    this.imageUrl = this.resource.imageURL;
     this.name = this.resource.name;
-    this.id = this.resource.id;
+    this.imageUrl = this.resource.imageURL;
     this.category = this.resource.category;
+    this.id = this.resource.id;
   }
 
 }

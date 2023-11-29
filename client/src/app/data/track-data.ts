@@ -28,27 +28,22 @@ export class TrackData extends ResourceData {
 		var seconds:number = (this.duration_ms) / 1000 % 60; // 100ms/sec, get remainder
 		return minutes.toFixed(0) + ':' + seconds.toFixed(0).padStart(2, '0');
 	}
-
-	get primaryArtist() {
-		return this.artists[0];
-	}
 	
-	get artistName() {
-		return this.artists[0].name;
-	}
-
-	get artistURL() {
-		return 'http://localhost:4200/artist/' + this.artists[0].id;
-	}
-
 	get albumName() {
 		return this.album.name;
 	}
-
 	get albumURL() {
 		return 'http://localhost:4200/album/' + this.album.id;
 	}
-
+	get artistName() {
+		return this.artists[0].name;
+	}
+	get artistURL() {
+		return 'http://localhost:4200/artist/' + this.artists[0].id;
+	}
+	get primaryArtist() {
+		return this.artists[0];
+	}
 	get trackURL() {
 		return 'http://localhost:4200/track/' + this.id;
 	}

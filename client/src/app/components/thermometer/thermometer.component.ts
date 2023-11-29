@@ -11,13 +11,10 @@ export class ThermometerComponent implements OnInit {
   @Input() percent:string;
   @Input() percentStr:string;
   @Input() color:string;
-  widthPercentStr:string;
 
   constructor() { }
 
   ngOnInit()
-  {
-    this.widthPercentStr = "width: " + this.percentStr;
-  }
+  { }
 
 }
